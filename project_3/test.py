@@ -1,0 +1,16 @@
+from github_client import Client
+
+c = Client("4630d94df963d5d2c2efcc6a4c0e8e0421ba5a9b")
+# print(c.header)
+# print(c.list_stars())
+# print(c.list_followers())
+# print(c.list_repo())
+# print(c.star_repo(103127115))
+# print(c.star_repo(-1))
+# print(c.follow_user(1455535))
+# print(c.follow_user('1'))
+# print(c.unfollow_user(1455535))
+# print(c.unfollow_user(-1))
+# print(c.create_repo('first_test'))
+# print(c.delete_repo(112088200))
+# print(c.delete_repo(21312))

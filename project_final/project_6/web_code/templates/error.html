@@ -1,0 +1,10 @@
+<html>
+<head>
+<title>first_web</title>
+</head>
+<body >
+        {% for message in get_flashed_messages() %}
+            <p>{{ message }}</p>
+        {% endfor %}
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "ID": "sqlite",
+  "Name": "sqlite",
+  "Tags": [
+    "primary",
+    "v1"
+  ],
+  "Address": "192.168.227.144",
+  "Port": 3000,
+  "EnableTagOverride": false,
+  "Check": {
+    "DeregisterCriticalServiceAfter": "90m",
+    "HTTP": "http://192.168.227.144:3000/health",
+    "Interval": "10s"
+  }
+}

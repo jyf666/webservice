@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>first_web</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="static/css/bootstrap.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="static/css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+<!-- Header -->
+<div id="top-nav" class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-toggle"></span>
+      </button>
+      <a class="navbar-brand" href="#">Control Panel</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+
+          <li class="dropdown">
+              <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="#">
+                  <i class="glyphicon glyphicon-user"></i> {{name}} <span class="caret"></span></a>
+              <ul id="g-account-menu" class="dropdown-menu" role="menu">
+                  <li><a href="/exit"><i class="glyphicon glyphicon-lock"></i> Logout</a></li>
+              </ul>
+          </li>
+      </ul>
+    </div>
+  </div><!-- /container -->
+</div>
+<!-- /Header -->
+
+<!-- Main -->
+<div class="container">
+
+      <h1>{% if name %} {% else %}Sorry , you need to  sign in !{% endif %}</h1>
+      {% if name %}
+        {% if result %}
+    <div class="col-sm-9">
+
+      <!-- column 2 -->
+       <h3><i class="glyphicon glyphicon-dashboard"></i> YOUR COMPUTER</h3>
+
+       <hr>
+	   <div class="row">
+            <!-- center left-->
+         	<div class="col-md-7">
+
+
+
+              <div class="panel panel-default">
+                  <div class="panel-heading"><h4>Memory Usage</h4></div>
+                  <div class="panel-body">
+
+                    <h5>RAM TOTAL :</h5>
+
+                      <p>{{result["ram_total"]}}  M</p>
+                      <hr>
+
+                      <h5>RAM USED :</h5>
+                   <p>{{result["ram_used"]}}  M</p>
+
+
+                  </div><!--/panel-body-->
+              </div><!--/panel-->
+
+          	</div><!--/col-->
+
+
+           <!--center-right-->
+           <div class="col-md-5">
+               <div class="well">CPU USED : <span class="badge pull-right">{{result["cpu_user"]}}%</span></div>
+
+               <hr>
+
+               <table class="table table-striped">
+                   <thead>
+                   <tr><th>TOTAL</th><th>LOGICAL</th><th>PHYSICAL</th></tr>
+                   </thead>
+                   <tbody>
+                   <tr><td>{{result["cpu_total"]}}</td><td>{{result["cpu_logical"]}}</td><td>{{result["cpu_psy"]}}</td></tr>
+
+                   </tbody>
+               </table>
+
+           </div><!--/col-span-6-->
+
+       </div><!--/row-->
+  	</div><!--/col-span-9-->
+  </div><!--/row-->
+  <!-- /upper section -->
+    </div><!--/col-->
+
+</div><!--/container-->
+<!-- /Main -->
+{% endif %}
+      {% else %}
+        <a href="/login"><button>Login</button></a>
+      {% endif %}
+
+	<!-- script references -->
+        <script src="static/js/chart.js"></script>
+		<script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+
+	</body>
+</html>
